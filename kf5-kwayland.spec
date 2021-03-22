@@ -1,15 +1,15 @@
-%define		kdeframever	5.79
+%define		kdeframever	5.80
 %define		qtver		5.9.0
 %define		kfname		kwayland
 
 Summary:	Framework for managing menu and toolbar actions
 Name:		kf5-%{kfname}
-Version:	5.79.0
+Version:	5.80.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	9d221f6fc2f4d704fa115b59275218fd
+# Source0-md5:	2b975913e932d969588756ed2071cdd0
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -74,9 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md
 %{_datadir}/qlogging-categories5/kwayland.categories
-%attr(755,root,root) %ghost %{_libdir}/libKF5WaylandClient.so.5
+%ghost %{_libdir}/libKF5WaylandClient.so.5
 %attr(755,root,root) %{_libdir}/libKF5WaylandClient.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5WaylandServer.so.5
+%ghost %{_libdir}/libKF5WaylandServer.so.5
 %attr(755,root,root) %{_libdir}/libKF5WaylandServer.so.5.*.*
 %attr(755,root,root) %{_prefix}/libexec/org-kde-kf5-kwayland-testserver
 %{_datadir}/qlogging-categories5/kwayland.renamecategories
@@ -88,5 +88,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/KF5Wayland
 %{_libdir}/qt5/mkspecs/modules/qt_KWaylandClient.pri
 %{_libdir}/qt5/mkspecs/modules/qt_KWaylandServer.pri
-%attr(755,root,root) %{_libdir}/libKF5WaylandClient.so
-%attr(755,root,root) %{_libdir}/libKF5WaylandServer.so
+%{_libdir}/libKF5WaylandClient.so
+%{_libdir}/libKF5WaylandServer.so
