@@ -5,7 +5,7 @@
 Summary:	Framework for managing menu and toolbar actions
 Name:		kf5-%{kfname}
 Version:	5.80.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -23,8 +23,8 @@ BuildRequires:	Qt5Xml-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
+BuildRequires:	kf5-plasma-wayland-protocols-devel >= 1.1.1
 BuildRequires:	ninja
-BuildRequires:	plasma-wayland-protocols-devel >= 1.1.1
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	wayland-devel >= 1.7.0
