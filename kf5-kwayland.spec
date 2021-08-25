@@ -1,5 +1,5 @@
 %define		kdeframever	5.85
-%define		qtver		5.9.0
+%define		qtver		5.15.0
 %define		kfname		kwayland
 
 Summary:	Framework for managing menu and toolbar actions
@@ -11,28 +11,29 @@ Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	5253a422ba21dcb9bf92ffb53c035f2a
 URL:		http://www.kde.org/
+BuildRequires:	EGL-devel
+BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5DBus-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
-BuildRequires:	Qt5Network-devel >= %{qtver}
-BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
 BuildRequires:	Qt5WaylandClient-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
-BuildRequires:	Qt5Xml-devel >= %{qtver}
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.16
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
-BuildRequires:	kf5-plasma-wayland-protocols-devel >= 1.2.1
+BuildRequires:	kf5-plasma-wayland-protocols-devel >= 1.3.0
 BuildRequires:	ninja
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	wayland-devel >= 1.7.0
+BuildRequires:	wayland-devel >= 1.15
+BuildRequires:	wayland-protocols >= 1.15
 BuildRequires:	xz
+Requires:	Qt5Core >= %{qtver}
+Requires:	Qt5Gui >= %{qtver}
 Requires:	kf5-dirs
+Requires:	wayland >= 1.15
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		qt5dir		%{_libdir}/qt5
 
 %description
 kwayland
@@ -42,6 +43,7 @@ Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	Qt5Gui-devel >= %{qtver}
 
 %description devel
 Header files for %{kfname} development.
