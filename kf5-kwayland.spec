@@ -1,15 +1,15 @@
-%define		kdeframever	5.90
+%define		kdeframever	5.91
 %define		qtver		5.15.0
 %define		kfname		kwayland
 
 Summary:	Framework for managing menu and toolbar actions
 Name:		kf5-%{kfname}
-Version:	5.90.0
+Version:	5.91.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	ecdcc7e844f8e997d967b40a5105dcae
+# Source0-md5:	ceb9a445c9c074cd922c929454dfcf05
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -86,9 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KF5/KWayland
-%{_includedir}/KF5/kwayland_version.h
 %{_libdir}/cmake/KF5Wayland
 %{_libdir}/qt5/mkspecs/modules/qt_KWaylandClient.pri
 %{_libdir}/qt5/mkspecs/modules/qt_KWaylandServer.pri
 %{_libdir}/libKF5WaylandClient.so
 %{_libdir}/libKF5WaylandServer.so
+%{_pkgconfigdir}/KF5WaylandClient.pc
