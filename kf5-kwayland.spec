@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.92
+%define		kdeframever	5.93
 %define		qtver		5.15.0
 %define		kfname		kwayland
 
 Summary:	Framework for managing menu and toolbar actions
 Name:		kf5-%{kfname}
-Version:	5.92.0
+Version:	5.93.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	f4a068a4f10cf776a22ef7e6a0f0dad0
+# Source0-md5:	758b4375d97cd560e77c1ca0bd7a0157
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
