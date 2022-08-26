@@ -35,7 +35,6 @@ BuildRequires:	wayland-protocols >= 1.15
 BuildRequires:	xz
 Requires:	Qt5Core >= %{qtver}
 Requires:	Qt5Gui >= %{qtver}
-Requires:	kf5-dirs
 Requires:	wayland >= 1.15
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
