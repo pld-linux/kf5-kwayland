@@ -9,7 +9,7 @@ Summary:	Qt-style API to interact with the wayland-client and wayland-server API
 Summary(pl.UTF-8):	API w stylu Qt do interakcji z API wayland-client i wayland-server
 Name:		kf5-%{kfname}
 Version:	5.104.0
-Release:	1
+Release:	2
 License:	LGPL v2.1 or KDE-accepted LGPL v3+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
