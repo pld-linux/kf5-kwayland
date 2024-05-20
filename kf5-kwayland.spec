@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.115
+%define		kdeframever	5.116
 %define		qtver		5.15.2
 %define		kfname		kwayland
 
 Summary:	Qt-style API to interact with the wayland-client and wayland-server API
 Summary(pl.UTF-8):	API w stylu Qt do interakcji z API wayland-client i wayland-server
 Name:		kf5-%{kfname}
-Version:	5.115.0
+Version:	5.116.0
 Release:	1
 License:	LGPL v2.1 or KDE-accepted LGPL v3+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	5031ae48f5214293ca8484e719a78895
+# Source0-md5:	8d49e27dcc49f85023633d4d221415a4
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
