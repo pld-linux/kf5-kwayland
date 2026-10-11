@@ -1,8 +1,9 @@
 #
 # Conditional build:
-%bcond_with	tests		# build with tests
+%bcond_with	tests		# test suite
+
 %define		kdeframever	5.116
-%define		qtver		5.15.2
+%define		qt_ver		5.15.2
 %define		kfname		kwayland
 
 Summary:	Qt-style API to interact with the wayland-client and wayland-server API
@@ -16,13 +17,13 @@ Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{v
 # Source0-md5:	8d49e27dcc49f85023633d4d221415a4
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
-BuildRequires:	Qt5Concurrent-devel >= %{qtver}
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	Qt5WaylandClient-devel >= %{qtver}
-BuildRequires:	Qt5Widgets-devel >= %{qtver}
-BuildRequires:	Qt5XkbCommonSupport-devel >= %{qtver}
+BuildRequires:	Qt5Concurrent-devel >= %{qt_ver}
+BuildRequires:	Qt5Core-devel >= %{qt_ver}
+BuildRequires:	Qt5Gui-devel >= %{qt_ver}
+BuildRequires:	Qt5Test-devel >= %{qt_ver}
+BuildRequires:	Qt5WaylandClient-devel >= %{qt_ver}
+BuildRequires:	Qt5Widgets-devel >= %{qt_ver}
+BuildRequires:	Qt5XkbCommonSupport-devel >= %{qt_ver}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
@@ -34,8 +35,8 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	wayland-devel >= 1.15
 BuildRequires:	wayland-protocols >= 1.15
 BuildRequires:	xz
-Requires:	Qt5Core >= %{qtver}
-Requires:	Qt5Gui >= %{qtver}
+Requires:	Qt5Core >= %{qt_ver}
+Requires:	Qt5Gui >= %{qt_ver}
 Requires:	wayland >= 1.15
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,7 +53,7 @@ Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	Qt5Gui-devel >= %{qtver}
+Requires:	Qt5Gui-devel >= %{qt_ver}
 
 %description devel
 Header files for %{kfname} development.
@@ -90,10 +91,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md LICENSES/LicenseRef-KDE-Accepted-LGPL.txt
+%{_libdir}/libKF5WaylandClient.so.*.*.*
 %ghost %{_libdir}/libKF5WaylandClient.so.5
-%attr(755,root,root) %{_libdir}/libKF5WaylandClient.so.5.*.*
+%{_libdir}/libKF5WaylandServer.so.*.*.*
 %ghost %{_libdir}/libKF5WaylandServer.so.5
-%attr(755,root,root) %{_libdir}/libKF5WaylandServer.so.5.*.*
 %attr(755,root,root) %{_libexecdir}/org-kde-kf5-kwayland-testserver
 %{_datadir}/qlogging-categories5/kwayland.categories
 %{_datadir}/qlogging-categories5/kwayland.renamecategories
