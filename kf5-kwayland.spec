@@ -15,6 +15,7 @@ License:	LGPL v2.1 or KDE-accepted LGPL v3+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	8d49e27dcc49f85023633d4d221415a4
+Patch0:		kwayland-types.patch
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qt_ver}
@@ -63,6 +64,7 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 
 %prep
 %setup -q -n %{kfname}-%{version}
+%patch -P0 -p1
 
 %build
 %cmake -B build \

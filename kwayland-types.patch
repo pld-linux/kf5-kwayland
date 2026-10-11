@@ -1,0 +1,15 @@
+--- kwayland-5.116.0/src/server/drm_fourcc.h.orig	2024-05-04 13:42:41.000000000 +0200
++++ kwayland-5.116.0/src/server/drm_fourcc.h	2026-10-11 11:50:22.972609468 +0200
+@@ -12,8 +12,12 @@
+ //#include "drm.h"
+ 
+ // These typedefs are copied from drm.h
++#if defined(__linux__)
++#include <linux/types.h>
++#else
+ typedef uint32_t __u32;
+ typedef uint64_t __u64;
++#endif
+ 
+ #if defined(__cplusplus)
+ extern "C" {
